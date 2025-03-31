@@ -34,7 +34,6 @@ func (c ChatService) Join(stream proto.Chat_JoinServer) error {
 
 	go func() {
 		for {
-			fmt.Println("Recebeu a mensagem")
 			msg, err := stream.Recv()
 			if err != nil {
 				return
