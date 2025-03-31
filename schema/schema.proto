@@ -1,0 +1,13 @@
+syntax = "proto3";
+package grpc;
+option go_package = "internal/proto";
+
+message Message {
+    string User = 1;
+    string Message = 2;
+    int64 Timestamp = 3;
+}
+
+service Chat {
+    rpc Join(stream Message) returns (stream Message);
+}
